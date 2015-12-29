@@ -1,5 +1,15 @@
-<h2>Slides</h2>
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="col s12">
+        <h4><%= deck.title %></h4>
+      </div>
+    </div>
 
-<%= deck.title %>
-
-<%= render "slide", slide: deck.first_slide %>
+    <div class="row" id="slide-placeholder">
+      <div class="col s12">
+        <%= render "slide", slide: deck.first_slide %>
+      </div>
+    </div>
+  </div>
+</div>
