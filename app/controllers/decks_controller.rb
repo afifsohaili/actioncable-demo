@@ -4,6 +4,6 @@ class DecksController < ApplicationController
   end
 
   def deck
-    Deck.find_by(slug: params[:id])
+    @deck ||= DeckPresenter.new(Deck.find_by(slug: params[:id]))
   end
 end
