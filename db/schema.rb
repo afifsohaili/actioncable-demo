@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228235248) do
+ActiveRecord::Schema.define(version: 20151229114915) do
 
   create_table "decks", force: :cascade do |t|
     t.string "title"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20151228235248) do
     t.text    "body"
     t.text    "image"
     t.integer "position"
+    t.boolean "current_slide", default: false
   end
 
 end

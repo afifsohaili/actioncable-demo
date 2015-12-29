@@ -1,5 +1,5 @@
 class DeckPresenter < SimpleDelegator
-  def first_slide
-    slides.find_by(position: 0)
+  def current_slide
+    slides.find_by(current_slide: true)
   end
 end

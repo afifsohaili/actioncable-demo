@@ -8,12 +8,12 @@
 
     <div class="row" id="slide-placeholder">
       <div class="col s12">
-        <%= render "slide", slide: deck.first_slide %>
+        <%= render "slide", slide: deck.current_slide %>
       </div>
     </div>
 
   </div>
-  <input type="hidden" value="<%= deck.first_slide.position %>" id="slide-id">
+  <input type="hidden" value="<%= deck.current_slide.position %>" id="slide-id">
 </div>
 <a class="right btn-floating btn-large waves-effect waves-light light-blue" id="next" data-deck-id="<%= deck.id %>">
   <i class="material-icons">keyboard_arrow_right</i>
