@@ -13,7 +13,11 @@
     </div>
 
   </div>
+  <input type="hidden" value="<%= deck.first_slide.position %>" id="slide-id">
 </div>
 <a class="right btn-floating btn-large waves-effect waves-light light-blue" id="next" data-deck-id="<%= deck.id %>">
-  <i class="material-icons">add</i>
+  <i class="material-icons">keyboard_arrow_right</i>
+</a>
+<a class="left btn-floating btn-large waves-effect waves-light light-blue" id="prev" data-deck-id="<%= deck.id %>">
+  <i class="material-icons">keyboard_arrow_left</i>
 </a>

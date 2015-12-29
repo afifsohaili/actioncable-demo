@@ -6,6 +6,7 @@ App.slide = App.cable.subscriptions.create "SlideChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
+    $("#slide-id").val(data.position)
     $("#slide-title").text(data.title)
     $("#slide-body").text(data.body)
 

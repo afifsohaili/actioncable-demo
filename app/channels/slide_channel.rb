@@ -8,15 +8,24 @@ class SlideChannel < ApplicationCable::Channel
   end
 
   def prev(data)
-    broadcast current_deck_id, current_slide_position
+    slide = prev_slide(data["deckId"], data["slidePosition"])
+    if slide.present?
+      broadcast :prev, position: slide.position, title: slide.title, body: slide.body
+    end
   end
 
   def next(data)
     slide = next_slide(data["deckId"], data["slidePosition"])
-    broadcast :next, title: slide.title, body: slide.body
+    if slide.present?
+      broadcast :next, position: slide.position, title: slide.title, body: slide.body
+    end
   end
 
   private
+
+  def prev_slide(current_deck_id, current_slide_position)
+    Slide.find_by deck_id: current_deck_id, position: current_slide_position - 1
+  end
 
   def next_slide(current_deck_id, current_slide_position)
     Slide.find_by deck_id: current_deck_id, position: current_slide_position + 1
