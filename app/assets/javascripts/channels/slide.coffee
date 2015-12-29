@@ -6,10 +6,11 @@ App.slide = App.cable.subscriptions.create "SlideChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    # Called when there"s incoming data on the websocket for this channel
+    $("#slide-title").text(data.title)
+    $("#slide-body").text(data.body)
 
-  prev: ->
-    @perform "prev"
+  prev: (deckId, slidePosition) ->
+    @perform "prev", deckId: deckId, slidePosition: slidePosition
 
-  next: ->
-    @perform "next"
+  next: (deckId, slidePosition) ->
+    @perform "next", deckId: deckId, slidePosition: slidePosition
