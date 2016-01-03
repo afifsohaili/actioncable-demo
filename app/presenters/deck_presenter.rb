@@ -7,6 +7,7 @@ class DeckPresenter < SimpleDelegator
     current_slide.partial_name
   end
 
+
   private
 
   def deck
