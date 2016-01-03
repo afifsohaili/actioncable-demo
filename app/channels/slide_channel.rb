@@ -11,7 +11,7 @@ class SlideChannel < ApplicationCable::Channel
     slide = prev_slide(data["deckId"], data["slidePosition"])
     set_current_slide(slide)
     if slide.present?
-      broadcast :prev, position: slide.position, title: slide.title, body: slide.body
+      broadcast position: slide.position, partial: render_slide(slide.partial_name)
     end
   end
 
@@ -19,18 +19,24 @@ class SlideChannel < ApplicationCable::Channel
     slide = next_slide(data["deckId"], data["slidePosition"])
     set_current_slide(slide)
     if slide.present?
-      broadcast :next, position: slide.position, title: slide.title, body: slide.body
+      broadcast position: slide.position, partial: render_slide(slide.partial_name)
     end
   end
 
   private
 
+  def render_slide(partial_name)
+    ApplicationController.renderer.render partial: "decks/demo/#{partial_name}"
+  end
+
   def prev_slide(current_deck_id, current_slide_position)
-    Slide.find_by deck_id: current_deck_id, position: current_slide_position - 1
+    Slide.find_by deck_id: current_deck_id,
+                  position: current_slide_position - 1
   end
 
   def next_slide(current_deck_id, current_slide_position)
-    Slide.find_by deck_id: current_deck_id, position: current_slide_position + 1
+    Slide.find_by deck_id: current_deck_id,
+                  position: current_slide_position + 1
   end
 
   def set_current_slide(slide)
@@ -40,8 +46,7 @@ class SlideChannel < ApplicationCable::Channel
     slide.update_attributes(current_slide: true)
   end
 
-  def broadcast(command, slide_details)
-    data = slide_details.merge({ command: command })
-    ActionCable.server.broadcast "slide_channel", data
+  def broadcast(slide_data)
+    ActionCable.server.broadcast "slide_channel", slide_data
   end
 end

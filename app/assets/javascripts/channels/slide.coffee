@@ -7,8 +7,7 @@ App.slide = App.cable.subscriptions.create "SlideChannel",
 
   received: (data) ->
     $("#slide-id").val(data.position)
-    $("#slide-title").text(data.title)
-    $("#slide-body").text(data.body)
+    $("#slide-placeholder").html(data.partial)
 
   prev: (deckId, slidePosition) ->
     @perform "prev", deckId: deckId, slidePosition: slidePosition
