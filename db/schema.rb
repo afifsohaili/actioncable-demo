@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103170831) do
+ActiveRecord::Schema.define(version: 20160103232332) do
 
   create_table "decks", force: :cascade do |t|
-    t.string "title"
-    t.string "slug"
+    t.string  "title"
+    t.string  "slug"
+    t.integer "current_slide_position", default: 1
     t.index ["slug"], name: "index_decks_on_slug"
   end
 
   create_table "slides", force: :cascade do |t|
     t.integer "deck_id"
     t.integer "position"
-    t.boolean "current_slide", default: false
     t.string  "partial_name"
   end
 

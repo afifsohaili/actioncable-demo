@@ -9,17 +9,19 @@ class SlideChannel < ApplicationCable::Channel
 
   def prev(data)
     slide = prev_slide(data["deckId"], data["slidePosition"])
-    set_current_slide(slide)
     if slide.present?
-      broadcast position: slide.position, partial: render_slide(slide.partial_name)
+      set_current_slide(slide)
+      broadcast position: slide.position,
+                partial: render_slide(slide.partial_name)
     end
   end
 
   def next(data)
     slide = next_slide(data["deckId"], data["slidePosition"])
-    set_current_slide(slide)
     if slide.present?
-      broadcast position: slide.position, partial: render_slide(slide.partial_name)
+      set_current_slide(slide)
+      broadcast position: slide.position,
+                partial: render_slide(slide.partial_name)
     end
   end
 
@@ -40,10 +42,8 @@ class SlideChannel < ApplicationCable::Channel
   end
 
   def set_current_slide(slide)
-    return if slide.blank?
     deck = slide.deck
-    deck.slides.update_all(current_slide: false)
-    slide.update_attributes(current_slide: true)
+    deck.update_attributes(current_slide_position: slide.position)
   end
 
   def broadcast(slide_data)
