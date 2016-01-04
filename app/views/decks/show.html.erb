@@ -1,16 +1,18 @@
 <div class="row">
-  <div class="col s12">
-    <div class="row">
-      <div class="col s12" id="slide-placeholder">
-        <%= render "decks/demo/#{deck.current_slide_partial}" %>
-      </div>
+  <div class="col s12" id="slide-placeholder">
+    <div class="panel">
+      <%= render "decks/demo/#{deck.current_slide_partial}" %>
     </div>
-
   </div>
   <input type="hidden" value="<%= deck.current_slide_position %>" id="slide-id">
 </div>
 <% if deck_owner? %>
-<a class="right btn-floating btn-large waves-effect waves-light light-blue" id="next" data-deck-id="<%= deck.id %>">
-  <i class="material-icons">keyboard_arrow_right</i>
-</a>
+  <div class="sticky bottom">
+    <a id="next" class="action right waves-effect waves-light" href="#" data-deck-id="<%= deck.id %>">
+      <i class="material-icons">keyboard_arrow_right</i>
+    </a>
+    <a id="prev" class="action left waves-effect waves-light" href="#" data-deck-id="<%= deck.id %>">
+      <i class="material-icons">keyboard_arrow_left</i>
+    </a>
+  </div>
 <% end %>
