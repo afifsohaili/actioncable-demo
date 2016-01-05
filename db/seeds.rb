@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+deck = Deck.create({ title: 'Rails 5 ActionCable Demo', slug: 'actioncable-demo', current_slide_position: 1 })
+
+Slide.create({ deck_id: deck.id, position: 1, partial_name: 'page_1' })
+Slide.create({ deck_id: deck.id, position: 2, partial_name: 'page_2' })
+Slide.create({ deck_id: deck.id, position: 3, partial_name: 'page_3' })
+Slide.create({ deck_id: deck.id, position: 4, partial_name: 'page_4' })
+Slide.create({ deck_id: deck.id, position: 5, partial_name: 'page_5' })
+Slide.create({ deck_id: deck.id, position: 6, partial_name: 'page_6' })
+Slide.create({ deck_id: deck.id, position: 7, partial_name: 'chat_demo' })
+Slide.create({ deck_id: deck.id, position: 8, partial_name: 'generator' })
+
+Chat.create({ deck_id: deck.id, message: "Hello" })
