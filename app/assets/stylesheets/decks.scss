@@ -1,8 +1,22 @@
+@import "materialize/components/variables";
+
 $booster-red: #EE3124;
-$spacing: 20px;
+$spacing: $h5-fontsize;
 
 body {
   background: color("grey", "lighten-3");
+}
+
+#slide-placeholder {
+  font-size: $h5-fontsize;
+}
+
+ul {
+  padding-left: $h5-fontsize;
+
+  li {
+    list-style: disc;
+  }
 }
 
 .header {
@@ -13,7 +27,7 @@ body {
 
   .logo {
     max-height: 70px;
-    padding: $spacing;
+    padding: 15px;
   }
 }
 
