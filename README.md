@@ -1,24 +1,10 @@
 ## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Runs on Ruby 2.3.0
+* git clone
+* `bundle install`
+* `bundle exec rails db:setup`
+* `bundle exec rails s -p 3000`
+* Go to localhost:3000/decks/actioncable-demo
+* Don't quit exploring!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
