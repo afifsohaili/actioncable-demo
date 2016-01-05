@@ -1,24 +1,16 @@
-## README
+## Rails 5 ActionCable demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Runs on Ruby 2.3.0
+* git clone this damn repo
+* `bundle install`
+* `bundle exec rails db:setup`
+* `bundle exec rails server -p 3000`
+* Go to localhost:3000/decks/actioncable-demo
+* Don't quit exploring!
 
-Things you may want to cover:
+Things to look into:
+# MeteorJS - also a real-time app framework. Javascript-everything
 
-* Ruby version
+p.s. Sorry I forgot to record my presentation!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Afif Sohaili
