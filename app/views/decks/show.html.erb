@@ -1,8 +1,25 @@
 <div class="row">
-  <div class="col s12">
+  <div class="col s9">
     <div class="panel" id="slide-placeholder">
       <%= render "decks/demo/#{deck.current_slide_partial}" %>
     </div>
+  </div>
+  <div id="#chat" class="col s3 white z-depth-1">
+    <div id="chat-placeholder">
+      <div class="col s12">
+      <% deck.chats.each do |chat| %>
+        <%= render "chat", chat: chat %>
+      <% end %>
+      </div>
+    </div>
+    <form action="">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="message" type="text" name="message">
+          <label for="message">Chat message</label>
+        </div>
+      </div>
+    </form>
   </div>
   <input type="hidden" value="<%= deck.current_slide_position %>" id="slide-id">
 </div>

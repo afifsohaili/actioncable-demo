@@ -1,0 +1,15 @@
+@import "materialize/components/color";
+
+#chat-placeholder {
+  padding-top: 20px;
+}
+
+.chat-message {
+  margin: 0 10px 10px 0;
+  height: 40px;
+  line-height: 40px;
+
+  img {
+    display: inline;
+  }
+}
