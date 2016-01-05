@@ -11,7 +11,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
-  <body class="white">
+  <body>
+    <header class="header">
+      <img src="/logo.png" alt="Booster logo" class="logo">
+    </header>
     <%= yield %>
   </body>
 </html>

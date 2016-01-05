@@ -1,10 +1,21 @@
 @import "materialize/components/variables";
+@import "materialize/components/color";
 
 $booster-red: #EE3124;
 $spacing: $h5-fontsize;
 
+html {
+  height: 100%;
+}
+
+#logo {
+  padding-top: 31%;
+  padding-bottom: 30px;
+}
+
 body {
   background: color("grey", "lighten-3");
+  min-height: 100%;
 }
 
 #slide-placeholder {
@@ -58,4 +69,9 @@ ul {
 
     margin: 0;
   }
+}
+
+.code {
+  font-family: "Courier New";
+  color: color("blue", "lighten-1");
 }
