@@ -1,10 +1,16 @@
-## README
+## Rails 5 ActionCable demo
 
 * Runs on Ruby 2.3.0
-* git clone
+* git clone this damn repo
 * `bundle install`
 * `bundle exec rails db:setup`
-* `bundle exec rails s -p 3000`
+* `bundle exec rails server -p 3000`
 * Go to localhost:3000/decks/actioncable-demo
 * Don't quit exploring!
 
+Things to look into:
+# MeteorJS - also a real-time app framework. Javascript-everything
+
+p.s. Sorry I forgot to record my presentation!
+
+- Afif Sohaili
